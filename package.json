@@ -1,7 +1,7 @@
 {
-  "name": "lesson_13-be",
+  "name": "TechNotes-Backend",
   "version": "1.0.0",
-  "description": "techNotes MERN Project",
+  "description": "TechNotes MERN Project",
   "main": "server.js",
   "scripts": {
     "start": "node server",
