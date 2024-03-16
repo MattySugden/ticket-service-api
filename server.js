@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config()  // added line to check .env for access tokens
 require('express-async-errors')
 const express = require('express')
 const app = express()
@@ -6,11 +6,14 @@ const path = require('path')
 const { logger, logEvents } = require('./middleware/logger')
 const errorHandler = require('./middleware/errorHandler')
 const cookieParser = require('cookie-parser')
+// const { verifyJWT } = require('./middleware/verifyJWT')  // importing verifyJWT file from middleware
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
 const connectDB = require('./config/dbConn')
 const mongoose = require('mongoose')
 const PORT = process.env.PORT || 3500
+
+mongoose.set('strictQuery', true)  // Code added after npm audit to fix message in terminal when server started.
 
 console.log(process.env.NODE_ENV)
 
